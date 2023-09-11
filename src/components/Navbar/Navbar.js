@@ -15,9 +15,9 @@ import {
   FormControlLabel,
   Checkbox,
   Rating,
-  Button,
+  // Button,
 } from "@mui/material";
-// import Button from "UI/Button";
+import Button from "UI/Button";
 import { authActions } from "app/slices/auth";
 
 import { RiShutDownLine } from "react-icons/ri";
@@ -36,7 +36,7 @@ import { useDispatch } from "react-redux";
 const Navbar = ({ isAuth }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [term, setTerm] = useState("");
- 
+
   const navigate = useNavigate();
   const [isPageScrolled, setIsPageScrolled] = useState(false);
   const dispatch = useDispatch();
