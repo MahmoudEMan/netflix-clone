@@ -1,57 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React from "react";
+import {
+  createBrowserRouter,
+  // createRoutesFromElements,
+  RouterProvider,
+  // Route,
+} from "react-router-dom";
+import { PhotoProvider } from "react-photo-view";
+
+import "./App.css";
+import "swiper/css";
+import "swiper/css/scrollbar";
+import "react-photo-view/dist/react-photo-view.css";
+import "react-circular-progressbar/dist/styles.css";
+
+//pages
+
+import RootLayout from "pages/Root.js";
+import HomeScreen from "pages/homescreen";
+import DetailsPage from "pages/detailsPage";
+import ActorDetails from "pages/actorPage";
+import SearchPage from "pages/searchPage";
+import ShowsPage from "pages/ShowsPage";
+
+////login page
+import LoginScreen from "pages/loginScreen";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      { index: true, element: <HomeScreen /> },
+      {
+        path: "/login",
+        element: <LoginScreen />,
+      },
+      { path: "explore/:type/:category", element: <ShowsPage /> },
+      { path: "details/:type/:id", element: <DetailsPage /> },
+      { path: "actor/:id", element: <ActorDetails /> },
+      { path: "search", element: <SearchPage /> },
+    ],
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <PhotoProvider photoClosable>
+      <RouterProvider router={router} />
+    </PhotoProvider>
   );
 }
 

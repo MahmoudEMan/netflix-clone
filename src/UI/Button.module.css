@@ -1,0 +1,17 @@
+.button {
+    padding: 0.5rem 1.5rem;
+    gap: 0.5rem;
+    border-radius: 3px;
+}
+.white.button{
+    background-color: #fff;
+    color: #000;
+}
+.grey.button{
+    background-color: rgba(179, 179, 179,0.5);
+    color: #fff;
+}
+.red.button{
+    background-color: #e50914;
+    color: #fff;
+}
