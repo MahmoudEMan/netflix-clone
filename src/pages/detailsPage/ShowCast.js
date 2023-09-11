@@ -6,7 +6,6 @@ import { Scrollbar } from "swiper";
 import { CircularProgressbar } from "react-circular-progressbar";
 import { useNavigate } from "react-router-dom";
 const ShowCast = ({ cast }) => {
-  console.log("🚀 ~ file: ShowCast.js:9 ~ ShowCast ~ cast:", cast);
   const navigate = useNavigate();
   return (
     <div className={`my-16 p-4`}>

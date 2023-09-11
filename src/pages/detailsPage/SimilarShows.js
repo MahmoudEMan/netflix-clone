@@ -6,10 +6,6 @@ import { Scrollbar } from "swiper";
 import { CircularProgressbar } from "react-circular-progressbar";
 import { useNavigate } from "react-router-dom";
 const SimilarShows = ({ similarShows, title }) => {
-  console.log(
-    "🚀 ~ file: SimilarShows.js:9 ~ SimilarShows ~ similarShows:",
-    similarShows
-  );
   const navigate = useNavigate();
   return (
     <div className={`my-16 p-4`}>

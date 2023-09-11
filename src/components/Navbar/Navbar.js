@@ -36,10 +36,7 @@ import { useDispatch } from "react-redux";
 const Navbar = ({ isAuth }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [term, setTerm] = useState("");
-  console.log(
-    "🚀 ~ file: Navbar.js:33 ~ Navbar ~ searchParams:",
-    searchParams.get("query")
-  );
+ 
   const navigate = useNavigate();
   const [isPageScrolled, setIsPageScrolled] = useState(false);
   const dispatch = useDispatch();

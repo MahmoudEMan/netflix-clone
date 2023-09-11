@@ -18,12 +18,10 @@ const SearchPage = () => {
     if (query)
       (async () => {
         const detailsData = await searchTMDB(query, page);
-        console.log("🚀 ~ file: index.js:21 ~ detailsData:", detailsData);
         document.title = `NETFLIX | Search ${query}`;
       })();
   }, [page, query]);
 
-  console.log("🚀 ~ file: index.js:6 ~ SearchPage ~ data:", params.get("q"));
   return <div>index</div>;
 };
 

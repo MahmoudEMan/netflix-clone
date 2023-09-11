@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import { redirect } from "react-router-dom";
 
 const authInitialValue = () => {
-  console.log(localStorage.getItem("login"));
   return { isAuth: localStorage.getItem("login") };
 };
 

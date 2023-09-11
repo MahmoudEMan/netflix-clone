@@ -9,7 +9,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 const HomeSlider = ({ title, url }) => {
   const navigate = useNavigate();
   const [movies, setMovies] = useState(null);
-  //   console.log("zed ~ file: HomeSlider.js:8 ~ HomeSlider ~ movies:", movies);
 
   useEffect(() => {
     async function fetchData() {

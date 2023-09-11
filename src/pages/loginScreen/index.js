@@ -82,7 +82,6 @@ const LoginScreen = () => {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              console.log("submit");
             }}
             className={"w-full flex mt-8"}
             action=""

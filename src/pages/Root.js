@@ -16,7 +16,6 @@ const Root = () => {
   const isNonMobile = useMediaQuery("(min-width: 600px)");
   const [isSidebarOpen, setIsSidebarOpen] = useState(isNonMobile);
   const { isAuth } = useSelector((state) => state.auth);
-  console.log("🚀 ~ file: Root.js:19 ~ Root ~ data:", isAuth);
   const location = useLocation();
   // const loggedIn = false;
 

@@ -29,10 +29,8 @@ const ActorDetails = () => {
   const data = useParams();
   const [actor, setActor] = useState(null);
   const navigate = useNavigate();
-  console.log("🚀 ~ file: index.js:21 ~ ActorDetails ~ movie:", actor);
 
   const { id } = data;
-  console.log("🚀 ~ file: index.js:24 ~ ActorDetails ~ id:", id);
   useEffect(() => {
     async function fetchData() {
       const detailsData = await getActorDetailsById(id);

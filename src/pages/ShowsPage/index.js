@@ -26,10 +26,10 @@ const MoviesPage = () => {
   const { type, category } = useParams();
   const [shows, setShows] = useState(null);
   const [page, setPage] = useState(1);
-  console.log("🚀 ~ file: index.js:14 ~ MoviesPage ~ shows:", shows);
 
   useEffect(() => {
     setShows(null);
+
     async function fetchData() {
       const detailsData = await getShowsByCategory(category, type, page);
       setShows(detailsData);
@@ -45,6 +45,9 @@ const MoviesPage = () => {
           return (
             <Link
               to={`/explore/${type}/${cate.route}`}
+              onClick={() => {
+                setPage(1);
+              }}
               key={index}
               className={` px-6 py-2 border-2 text-white  ${
                 cate.route === category

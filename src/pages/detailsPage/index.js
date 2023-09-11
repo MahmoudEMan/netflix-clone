@@ -18,12 +18,8 @@ const details = [
 const DetailsPage = () => {
   const data = useParams();
   const [searchParams] = useSearchParams();
-  console.log(
-    "🚀 ~ file: index.js:21 ~ DetailsPage ~ searchParams:",
-    searchParams.get("query")
-  );
+
   const [movie, setMovie] = useState(null);
-  console.log("🚀 ~ file: index.js:13 ~ DetailsPage ~ movie:", movie);
 
   const { id, type } = data;
   useEffect(() => {
