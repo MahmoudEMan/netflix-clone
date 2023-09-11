@@ -24,17 +24,17 @@ const HomeSlider = ({ title, url }) => {
         textTransform={"upperCase"}
         variant={"h2"}
         color={"#fff"}
-        className={"text-2xl lg:text-5xl whitespace-nowrap my-8 mx-32"}
+        className={"text-2xl lg:text-5xl whitespace-nowrap my-8 mx-8 lg:mx-32"}
       >
         {title}
       </Typography>
       {movies && (
-        <Box>
+        <Box className={"max-md:px-8"}>
           <Swiper
             breakpoints={{
               300: {
                 slidesPerView: 2,
-                spaceBetween: 5,
+                spaceBetween: 7,
               },
               640: {
                 slidesPerView: 3,
@@ -63,7 +63,7 @@ const HomeSlider = ({ title, url }) => {
                       }`
                     );
                   }}
-                  className="cursor-pointer translate-x-1/2"
+                  className="cursor-pointer lg:translate-x-1/2"
                 >
                   {({ isActive, isPrev }) => (
                     <Box
