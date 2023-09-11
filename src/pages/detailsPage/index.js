@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import DetailsPageHero from "./DetailsPageHero";
 // import { LazyLoadImage } from "react-lazy-load-image-component";
 import { getDetailsById } from "../../api/requests";
 import ShowCast from "./ShowCast";
 import SimilarShows from "./SimilarShows";
+import YouTube from "react-youtube";
+import ReactPlayer from "react-player";
 
 const details = [
   { title: "Status", attachment: "status" },
@@ -17,9 +19,9 @@ const details = [
 ];
 const DetailsPage = () => {
   const data = useParams();
-  const [searchParams] = useSearchParams();
 
   const [movie, setMovie] = useState(null);
+  console.log("🚀 ~ file: index.js:22 ~ DetailsPage ~ movie:", movie);
 
   const { id, type } = data;
   useEffect(() => {
@@ -31,14 +33,27 @@ const DetailsPage = () => {
     fetchData();
   }, [id, type]);
   if (!movie) return null;
+
   return (
     <>
       <DetailsPageHero movie={movie} />
 
       <div className=" max-w-[1440px]  mx-auto my-24">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
-          <div className="w-full col-span-3">
-            <iframe
+          <div className="w-full col-span-3 p-4">
+            <ReactPlayer
+              className={"w-full h-full"}
+              // url={"https://www.youtube.com/watch?v=LXb3EKWsInQ"}
+              url={`https://www.youtube.com/watch?v=${movie?.videos?.results[0]?.key}`}
+            />
+            {/* <YouTube
+              videoId={movie?.videos?.results[0]?.key}
+              opts={{
+                height: "540px",
+                width: "640px",
+              }}
+            /> */}
+            {/* <iframe
               width=""
               height="540"
               src={`https://www.youtube.com/embed/${movie?.videos?.results[0]?.key}`}
@@ -47,7 +62,7 @@ const DetailsPage = () => {
               allowFullScreen
               title="Embedded youtube"
               className="w-full"
-            />
+            /> */}
           </div>
           <div className="p-4">
             {details.map((detail, index) => {
