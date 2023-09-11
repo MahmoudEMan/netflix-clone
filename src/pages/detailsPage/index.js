@@ -41,7 +41,7 @@ const DetailsPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
           <div className="w-full col-span-3 p-4">
             <ReactPlayer
-              className={"w-full h-[640px]"}
+              className={"w-full lg:h-[640px]"}
               // url={"https://www.youtube.com/watch?v=LXb3EKWsInQ"}
               url={`https://www.youtube.com/watch?v=${movie?.videos?.results[0]?.key}`}
             />
