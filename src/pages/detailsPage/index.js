@@ -5,7 +5,6 @@ import DetailsPageHero from "./DetailsPageHero";
 import { getDetailsById } from "../../api/requests";
 import ShowCast from "./ShowCast";
 import SimilarShows from "./SimilarShows";
-import YouTube from "react-youtube";
 import ReactPlayer from "react-player";
 
 const details = [
@@ -46,23 +45,6 @@ const DetailsPage = () => {
               // url={"https://www.youtube.com/watch?v=LXb3EKWsInQ"}
               url={`https://www.youtube.com/watch?v=${movie?.videos?.results[0]?.key}`}
             />
-            {/* <YouTube
-              videoId={movie?.videos?.results[0]?.key}
-              opts={{
-                height: "540px",
-                width: "640px",
-              }}
-            /> */}
-            {/* <iframe
-              width=""
-              height="540"
-              src={`https://www.youtube.com/embed/${movie?.videos?.results[0]?.key}`}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              title="Embedded youtube"
-              className="w-full"
-            /> */}
           </div>
           <div className="p-4">
             {details.map((detail, index) => {
