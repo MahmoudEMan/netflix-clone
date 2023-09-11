@@ -59,7 +59,7 @@ export default function MoviePageHero({ movie }) {
 
               <div className="flex gap-6 max-sm:mt-6 items-center">
                 <div className="w-10 h-10 bg-black rounded-full border-solid border-red-700 border-2 flex justify-center items-center text-red-700">
-                  {movie.adult ? "+18" : "+12"}
+                  {movie.adult ? "+21" : "+18"}
                 </div>
                 <div className="flex gap-4">
                   {movie.genres.slice(0, 3).map((genre, index) => {
